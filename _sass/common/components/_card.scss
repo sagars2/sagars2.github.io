@@ -93,7 +93,7 @@
   @include box-shadow(0);
   .card__image {
     & > img {
-      border-radius: map-get($base, border-radius);
+      border-radius: map-get($base, border-radius-sm);
     }
   }
   .card__content {

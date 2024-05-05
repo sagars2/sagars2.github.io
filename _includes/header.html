@@ -9,10 +9,17 @@
       <div class="header__title">
         <div class="header__brand">
           {%- include svg/logo.svg -%}
+          <!-- <img
+            src="includes/svg/logo.svg"
+            height="60"
+            width="60" /> -->
+            <!-- <object type="image/svg+xml" data="svg/logo.svg">
+            Your browser does not support SVG
+          </object> -->
           {%- assign _paths_root = site.paths.root | default: site.data.variables.default.paths.root  -%}
           {%- include snippets/get-nav-url.html path=_paths_root -%}
           {%- if site.title -%}
-            <a title="{%- if site.description -%}{{ site.description }}{%- endif -%}" href="{{ __return }}">{{ site.title }}</a>
+            <a title="{%- if site.description -%}{{ site.description }}{%- endif -%}" href="{{ __return }}"></a>
           {%- endif -%}
         </div>
         {%- if site.search.provider -%}
