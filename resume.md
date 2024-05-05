@@ -1,0 +1,1 @@
+<a href="Sagar-Sachdev-Resume.pdf" target="_blank">PDF Resume</a>

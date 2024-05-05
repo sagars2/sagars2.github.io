@@ -4,15 +4,24 @@
 // Email: kitian616@outlook.com
 ///
 
+// color pallete
+$awesome-blue:     #5b85ab;
+$darkish-blue:     #427dad;
+$new-blue:          #0d77c4;
+$light-blue:       #1ca0ff;
+$good-blue:        #5bbad5;
+$great-orange:     #fca24d;
+$social-link_color:#28425c;
+
 // main colors
-$main-color-1:     #fc4d50;
+$main-color-1:     $new-blue; // red fc4d50, lighter red e0484a blue 427dad orangetan a85400
 $text-color-1:     #fff;
 
-$main-color-2:     #fca24d;
+$main-color-2:     #fca24d; //fca24d orange
 $text-color-2:     #fff;
 
-$main-color-3:     #f2f2f2;
-$text-color-3:     #333;
+$main-color-3:     #cfd2d4; //f2f2f2  , dark blue 192a38, light tan cfd2d4
+$text-color-3:     #333; //333 //nice blue 5787ad awesome blue
 
 $main-color-theme-light: rgba(#000, .9);
 $main-color-theme-dark:  rgba(#fff, .9);
@@ -22,8 +31,8 @@ $background-color: #fff;
 
 // text colors
 $text-color-theme-light-d: #000;
-$text-color-theme-light:   #222;
-$text-color-theme-light-l: #888;
+$text-color-theme-light:   #4a4a4a;
+$text-color-theme-light-l: #444;
 
 $text-color-theme-dark-d:  #fff;
 $text-color-theme-dark:    rgba(#fff, .95);
@@ -57,17 +66,21 @@ $red:             #f5222d;
 $text-color-function: #fff;
 
 // logo colors
-$mail-color:       #0072c5;
+// $mail-color:       #0072c5;
+
+$mail-color:       $social-link_color;
 $facebook-color:   #4267b2;
-$twitter-color:    #1da1f2;
-$weibo-color:      #e6162d;
+// $twitter-color:    #1da1f2;
+$twitter-color:    $social-link_color;
+$weibo-color:      $social-link_color;
 $google-plus-color:#ea4335;
 $telegram-color:   #32afed;
-$medium-color:     #000;
+$medium-color:     $social-link_color;
 $zhihu-color:      #0084ff;
 $douban-color:     #42bd56;
-$linkedin-color:   #1074af;
-$github-color:     #000;
+// $linkedin-color:   #1074af;
+$linkedin-color:   $social-link_color;
+$github-color:     $social-link_color;
 $npm-color:        #fff;
 
 // highlight colors
