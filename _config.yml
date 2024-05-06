@@ -18,8 +18,8 @@
 ##############################
 text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
 highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
-url     : "https://sagarsachdev.github.io" # the base hostname & protocol for your site e.g. https://www.someone.com
-baseurl : /sagarsachdev.github.io # does not include hostname
+url     : "https://sagars2.github.io" # the base hostname & protocol for your site e.g. https://www.someone.com
+baseurl : /sagars2.github.io # does not include hostname
 title   : Sagar Sachdev
 description: > # this means to ignore newlines until "Language & timezone"
   Robot Deployment Engineer at Path Robotics | Former Graduate Researcher at the AirLab at Carnegie Mellon University | MS in Mechanical Engineering (Robotics) Graduate from Carnegie Mellon University
@@ -36,7 +36,7 @@ timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for
 author:
   type      : # "person" (default), "organization"
   name      : Sagar Sachdev
-  url       : https://sagarsachdev.github.io
+  url       : https://sagars2.github.io
   avatar    : # path or url of avatar image (square)
   bio       : I'm Sagar.
   email     : sagar22sachdev@gmail.com
@@ -55,7 +55,7 @@ author:
 
 ## => GitHub Repository (if the site is hosted by GitHub)
 ##############################
-repository: sagars2/sagarsachdev.github.io
+repository: sagars2/sagars2.github.io
 repository_tree: master
 
 
@@ -74,7 +74,7 @@ paths:
 excerpt_separator: <!--more-->
 
 ## license
-license: CC-BY-NC-4.0 # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
+license: # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
 
 ## TOC
 toc:
@@ -96,8 +96,8 @@ chart: # false (default), true
 
 ## => Paginate
 ##############################
-paginate: 8
-paginate_path: /news/page:num # don't change this unless for special need
+# paginate: 8
+# paginate_path: /news/page:num # don't change this unless for special need
 
 
 ## => Sources
@@ -173,7 +173,7 @@ analytics:
 
   ## Google Analytics
   google:
-    tracking_id : G-L447EC35E3 # Google Analytics id for the site
+    tracking_id : # Google Analytics id for the site
     anonymize_ip: false # Anonymize IP tracking for Analytics
 
 
@@ -201,43 +201,43 @@ exclude:
   - /test
   - /vendor
 
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: article
-      sharing: true
-      license: false
-      aside:
-        toc: false
-      show_edit_on_github: false
-      show_subscribe: false
-      pageview: true
-  - scope:
-      path: ""
-      type: research_posts
-    values:
-      layout: article
-      sharing: true
-      license: false
-      aside:
-        toc: false
-      show_edit_on_github: false
-      show_subscribe: false
-      pageview: true
-  - scope:
-      path: ""
-      type: other_posts
-    values:
-      layout: article
-      sharing: true
-      license: false
-      aside:
-        toc: false
-      show_edit_on_github: false
-      show_subscribe: false
-      pageview: true
+# defaults:
+#   - scope:
+#       path: ""
+#       type: posts
+#     values:
+#       layout: article
+#       sharing: true
+#       license: false
+#       aside:
+#         toc: false
+#       show_edit_on_github: false
+#       show_subscribe: false
+#       pageview: true
+#   - scope:
+#       path: ""
+#       type: research_posts
+#     values:
+#       layout: article
+#       sharing: true
+#       license: false
+#       aside:
+#         toc: false
+#       show_edit_on_github: false
+#       show_subscribe: false
+#       pageview: true
+#   - scope:
+#       path: ""
+#       type: other_posts
+#     values:
+#       layout: article
+#       sharing: true
+#       license: false
+#       aside:
+#         toc: false
+#       show_edit_on_github: false
+#       show_subscribe: false
+#       pageview: true
 
 
 ## => Plugins
