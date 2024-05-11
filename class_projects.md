@@ -52,7 +52,7 @@ key: page-home
         <h3>Multi-Agent Planning for Search at Sea</h3>
     <div class="item__description">
        <ul style="font-size:16px">
-        <li> Used TIGRIS planner + Trochoidal Path Solver for Multi-Agent Planning for Search Operations at Sea </li>
+        <li> Used <a href="https://theairlab.org/tigris/">TIGRIS</a> planner + Trochoidal Path Solver for Multi-Agent Planning for Search Operations at Sea </li>
         <li> Fed in Belief Space from one UAV into the second UAV and used it to plan paths such that they would not collide </li>
         <li> Visualized these paths using RViz in a custom search map, given planning parameters such as curvature radius, start and goal pose </li>
         <li> Goal: Achieving Goal State with maximum reduction in Shannon Entropy without coverage of the same area</li>
@@ -76,12 +76,11 @@ key: page-home
       </div>
     </div>
   </div>
-  
   <div class="item__content">
     <h3>Graph Optimization of ORB Features</h3>
     <div class="item__description">
       <ul style="font-size:16px">
-        <li>Extracted ORB features and implemented Graph Factorization using GTSAM in Python3 and compared this against ground truth measurements</li>
+        <li>Extracted ORB features and implemented Graph Factorization using <a href="https://gtsam.org/">GTSAM</a> in Python3 and compared this against ground truth measurements</li>
         <li>Used the GTSAM functions and visual odometry to match points between frames</li>
       </ul>
       <!-- <h3 markdown="1" align="center">[Click for more details](http://www.google.com)</h3> -->
