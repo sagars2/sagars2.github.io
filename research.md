@@ -61,11 +61,16 @@ key: page-home
       <ul style="font-size:16px">
         <li> Created software suite for autonomous disassembly station, improving fastener removal accuracy to 95% using ROS, Python and C++</li>
         <li> Streamlined forward kinematics calculations for a 6-DOF General Stewart Manipulator in MATLAB and Python by utilizing an offline lookup table, leading to 25% reduction in runtime </li>
+        <div style="display: flex; justify-content: space-between; text-align: center;">
+          <a href="https://www.cmu.edu/news/stories/archives/2021/july/device-recycling.html">Article</a>
+          <a href="https://www.apple.com/newsroom/2024/04/apple-cuts-greenhouse-emissions-in-half/">Apple's Update</a> 
+        </div>
       </ul>
       <br>
     </div>
   </div>
 </div>
+
 <h1 align="center">Undergraduate Research</h1>
 
 ## Engineering System Design Lab | University of Illinois at Urbana-Champaign (UIUC) 
