@@ -16,7 +16,7 @@ key: page-home
   <div class="cell cell--4">
     <div class="card">
       <div class="card__image">
-        <img class="image" src="/assets/images/pics/sagarsachdev.jpg"/>
+        <img class="image" src="/assets/images/pics/sagarsachdev.JPEG"/>
       </div>
     </div>
   </div>
