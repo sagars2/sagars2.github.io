@@ -11,6 +11,33 @@ titles:
 key: page-home
 ---
 
+<!-- <div class="grid">
+  <div class="cell cell--auto"></div>
+  <div class="cell cell--5">
+    <div class="card">
+      <div class="card__image">
+        <img class="image" src="/assets/images/pics/sagarsachdev.JPEG"/>
+      </div>
+    </div>
+  </div>
+  <div class="cell cell--auto"></div>
+</div> -->
+<style>
+  .image {
+    width: 100%; /* Adjust this value as needed */
+    max-width: 500px; /* Optional: set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+  }
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cell--5 {
+    max-width: 600px; /* Optional: set a maximum width for the card container */
+  }
+</style>
+
 <div class="grid">
   <div class="cell cell--auto"></div>
   <div class="cell cell--3">
@@ -22,6 +49,8 @@ key: page-home
   </div>
   <div class="cell cell--auto"></div>
 </div>
+
+
 
 <style>
 .title1 {
