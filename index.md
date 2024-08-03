@@ -13,7 +13,7 @@ key: page-home
 
 <div class="grid">
   <div class="cell cell--auto"></div>
-  <div class="cell cell--4">
+  <div class="cell cell--3">
     <div class="card">
       <div class="card__image">
         <img class="image" src="/assets/images/pics/sagarsachdev.JPEG"/>
