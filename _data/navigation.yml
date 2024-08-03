@@ -37,13 +37,12 @@ header:
       en-AU   : *EN
       # @end locale config
     url: /class_projects.html
-
-  - titles:
-      # @start locale config
-      en      : &EN       Formula SAE
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-      # @end locale config
-    url: /formula_sae.html
+  # - titles:
+  #     # @start locale config
+  #     en      : &EN       Formula SAE
+  #     en-GB   : *EN
+  #     en-US   : *EN
+  #     en-CA   : *EN
+  #     en-AU   : *EN
+  #     # @end locale config
+  #   url: /formula_sae.html
