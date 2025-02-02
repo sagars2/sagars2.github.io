@@ -176,7 +176,7 @@ analytics:
 
   ## Google Analytics
   google:
-    tracking_id : UA-71907556-1
+    tracking_id : G-6JLF3670L1
     anonymize_ip: false
 
 
