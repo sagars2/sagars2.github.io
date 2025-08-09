@@ -17,9 +17,9 @@ key: page-home
 <!-- Your existing HTML code -->
 ## Robotics Deployment Engineer | Path Robotics
 ### Multi Arm Robot Deployment
-![Creation of Adam](./assets/images/work_experience/creation_of_adam.png)
+![Creation of Adam](./assets/images/work_experience/creationofadam.png)
 
-![Creation of Robots](./assets/images/work_experience/robots.png) 
+![Creation of Robots](./assets/images/work_experience/creationofrobots.png) 
 
 
 (WORK IN PROGRESS)
