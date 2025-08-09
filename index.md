@@ -11,7 +11,7 @@ titles:
 key: page-home
 ---
 
-<div class="grid">
+<!-- <div class="grid">
   <div class="cell cell--auto"></div>
   <div class="cell cell--auto">
     <div class="card">
@@ -21,9 +21,9 @@ key: page-home
     </div>
   </div>
   <div class="cell cell--auto"></div>
-</div>
+</div> -->
 
-<!-- ![Sagar Sachdev](/assets/images/pics/sagarsachdev.JPEG) -->
+![Sagar Sachdev](/assets/images/pics/sagarsachdev.JPEG)
 
 <style>
 .title1 {
@@ -113,3 +113,7 @@ I also contributed to the [Biorobotics lab](https://biorobotics.org/), where I l
 Outside of work and academics, I enjoy exploring the world through travel, listening to music, and attending concerts. I've recently taken up running and will be participating in my first 5K this year (add me on Strava!). I also play Flamenco on my Spanish Classical Guitar and love discovering new brunch and coffee spots in Columbus. I maintain an active lifestyle through gym workouts, hiking, keeping up with the latest technological marvels, and playing or watching soccer (my teams are the Argentina National Team and FC Barcelona).
 
 Whether you're interested in potential job opportunities or just want to chat about shared interests, I’m always open to connecting. Let's start a conversation!
+
+<h3>Companies, Research Labs and other Organizations that I have worked with</h3>
+
+![Logos of companies](/assets/images/pics/logos_image.png)
