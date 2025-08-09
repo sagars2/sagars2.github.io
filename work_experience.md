@@ -15,10 +15,11 @@ key: page-home
 <h1 align="center">Work Experience</h1>
 
 <!-- Your existing HTML code -->
-## Robotics Deployment Engineer | Path Robotics  -->
+## Robotics Deployment Engineer | Path Robotics
 ### Multi Arm Robot Deployment
 ![Creation of Adam](./assets/images/work_experience/creation_of_adam.png)
 
-![Creation of Robots](./assets/images/work_experience/robots.PNG) 
+![Creation of Robots](./assets/images/work_experience/robots.png) 
+
 
 (WORK IN PROGRESS)
