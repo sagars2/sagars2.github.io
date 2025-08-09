@@ -114,6 +114,6 @@ Outside of work and academics, I enjoy exploring the world through travel, liste
 
 Whether you're interested in potential job opportunities or just want to chat about shared interests, I’m always open to connecting. Let's start a conversation!
 
-<h3>Companies, Research Labs and other Organizations that I have worked with</h3>
+<h3><center>Companies, Research Labs, Universities and Other Organizations That I Have Worked With:</center></h3>
 
 ![Logos of companies](/assets/images/pics/logos_image.png)
