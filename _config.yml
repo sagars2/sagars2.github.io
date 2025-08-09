@@ -22,7 +22,7 @@ url     : "https://sagars2.github.io" # the base hostname & protocol for your si
 baseurl : /sagars2.github.io # does not include hostname
 title   : Sagar Sachdev
 description: > # this means to ignore newlines until "Language & timezone"
-  Robot Deployment Engineer at Path Robotics | Former Graduate Researcher at the AirLab at Carnegie Mellon University | MS in Mechanical Engineering (Robotics) Graduate from Carnegie Mellon University
+  Robotics Deployment Engineer at Path Robotics | Former Graduate Researcher at the AirLab at Carnegie Mellon University | MS in Mechanical Engineering (Robotics) Graduate from Carnegie Mellon University
 
 
 ## => Language and Timezone
