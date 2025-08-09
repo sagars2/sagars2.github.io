@@ -69,7 +69,7 @@ key: page-home
 
 <p class="title3">Sagar Sachdev</p>
 <center><hr class="hor123"></center>
-<p class="title2">Robot Deployment Engineer, Path Robotics</p>
+<p class="title2">Robotics Deployment Engineer, Path Robotics</p>
 
 
 
