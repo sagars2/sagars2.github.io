@@ -17,9 +17,14 @@ key: page-home
 <!-- Your existing HTML code -->
 ## Robotics Deployment Engineer | Path Robotics
 ### Multi Arm Robot Deployment
-![Creation of Adam](./assets/images/work_experience/creationofadam.png)
+<!-- ![Creation of Adam](./assets/images/work_experience/creationofadam.png)
 
-![Creation of Robots](./assets/images/work_experience/creationofrobots.png) 
+![Creation of Robots](./assets/images/work_experience/creationofrobots.png)  -->
+
+<div style="display: flex; gap: 10px;">
+  <img src="./assets/images/work_experience/creationofadam.png" style="width:50%">
+  <img src="./assets/images/work_experience/creationofrobots.png" style="width:50%">
+</div>
 
 
 (WORK IN PROGRESS)
