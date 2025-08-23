@@ -11,18 +11,6 @@ titles:
 key: page-home
 ---
 
-<!-- <div class="grid">
-  <div class="cell cell--auto"></div>
-  <div class="cell cell--auto">
-    <div class="card">
-      <div class="card__image">
-        <img class="image" src="/assets/images/pics/sagarsachdev.JPEG"/>
-      </div>
-    </div>
-  </div>
-  <div class="cell cell--auto"></div>
-</div> -->
-
 ![Sagar Sachdev](/assets/images/pics/sagarsachdev.JPEG)
 
 <style>
