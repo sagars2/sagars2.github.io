@@ -27,7 +27,7 @@ key: page-home
 </div>
 
 
-- Deployed the company’s **first multi-robot production system** at a customer site
+- Deployed the company’s **first [AW-3](https://www.path-robotics.com/robotic-welding-systems/aw3/) multi-robot production system** at a customer site
 - Developed calibration plugins and automation scripts using **Python, Bash and C++**, cutting deployment bring-up time by **30%**  
 - Served as **codeowner** for robot configurations (URDF, MoveIt, clearance planner configurations)  
 - Built, debugged, and deployed robotic applications in **ROS**.  
