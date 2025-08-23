@@ -73,8 +73,6 @@ key: page-home
 }
 </style>
 
-<!-- <p class="title4"> _________________ </p> -->
-<!-- <br> -->
 <br>
 
 <style>
