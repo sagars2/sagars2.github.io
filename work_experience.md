@@ -42,3 +42,7 @@ Final Processed Results + LightGlue Output:
 <div style="display: flex; gap: 10px; margin-bottom: 20px;">
   <img src="./assets/images/work_experience/lightgluepipeline1.png" style="width:100%">
 </div>
+
+<video width="100%" controls>
+  <source src="./assets/images/work_experience/EK-Timelapse-v1.mp4" type="video/mp4">
+</video>
