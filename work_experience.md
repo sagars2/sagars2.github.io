@@ -12,9 +12,13 @@ key: page-home
 # mode: immersive
 ---
 
-<h1 align="center">Work Experience</h1>
+<h1 align="center">Work Experience</h1>'
 
-## Robotics Deployment Engineer | Path Robotics
+## Forward Deployed Robotics Engineer | FieldAI (Feb 2026 - Present)
+
+<WORK IN PROGRESS: More details to be added soon!>
+
+## Robotics Deployment Engineer | Path Robotics (Sept 2023 - Feb 2026)
 ### Multi Arm Robot Deployment
 
 <div style="display: flex; gap: 10px; margin-bottom: 20px;">
