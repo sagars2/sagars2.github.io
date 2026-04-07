@@ -43,7 +43,7 @@ Final Processed Results + LightGlue Output:
   <img src="./assets/images/work_experience/lightgluepipeline1.png" style="width:100%">
 </div>
 
-First multi-robot system deployment::
+First multi-robot system deployment:
 <div style="width:100%; aspect-ratio:16/9;">
   <iframe src="https://drive.google.com/file/d/1z9sZqbbZgqzu9oLVIYqcdMh8ej-C6F9-/preview" width="100%" height="100%" allow="autoplay" allowfullscreen></iframe>
 </div>
