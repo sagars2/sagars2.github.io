@@ -57,7 +57,7 @@ key: page-home
 
 <p class="title3">Sagar Sachdev</p>
 <center><hr class="hor123"></center>
-<p class="title2">Robotics Deployment Engineer, Path Robotics</p>
+<p class="title2">Forward Deployed Robotics Engineer, FieldAI</p>
 
 
 
@@ -88,17 +88,16 @@ key: page-home
 }
 </style>
 
-Welcome to my portfolio! I'm Sagar, a Robotics Deployment Engineer at [Path Robotics](https://www.path-robotics.com/) in Columbus, OH. Originally from Singapore, I moved to the US in 2017 for my undergraduate studies at the [University of Illinois at Urbana-Champaign (UIUC)](https://illinois.edu/), followed by a thesis-based master's degree at [Carnegie Mellon University](https://www.cmu.edu/) in Pittsburgh.
+Welcome to my portfolio! I'm Sagar, a Forward Deployed Robotics Engineer at Field AI in Irvine, CA. Originally from Singapore, I moved to the US in 2017 for my undergraduate studies at the University of Illinois at Urbana-Champaign (UIUC), followed by a thesis-based master's degree at Carnegie Mellon University in Pittsburgh.
 
-In my current role, I focus on calibrating, testing, and deploying robotics software solutions for our Robotic Cells, which provide autonomous welding solutions to manufacturing industries across America. I'm dedicated to improving and optimizing our deployment processes, whether through writing utility scripts or creating documentation to onboard and familiarize others with our software suite.
+In my current role, I focus on forward-deploying robotics software solutions for the Boston Dynamics Spot in real-world environments, working closely with Field AI's autonomous systems to ensure robust performance in the field. Previously, as a Robotics Deployment Engineer at Path Robotics, I focused on calibrating, testing, and deploying software for Robotic Cells that provided autonomous welding solutions to manufacturing industries across America.
 
-As a graduate research assistant at the [AirLab](https://theairlab.org/) at Carnegie Mellon University, I was involved in cutting-edge research funded by the [Office of Naval Research](https://www.nre.navy.mil/). I developed a state-of-the-art "state-connector" for a global path planner, creating time-optimal trajectories in the presence of uniform wind. My research yielded a 37% improvement over the current state-of-the-art solution and uncovered a bug in the paper ["Classification of the Dubins Set"](https://www.sciencedirect.com/science/article/pii/S0921889000001275) by Shkel and Lumelsky. Both my findings were published in the IEEE RA-L journal and presented at [ICRA 2024](https://2024.ieee-icra.org/) in Yokohama, Japan.
+As a graduate research assistant at the AirLab at Carnegie Mellon University, I was involved in cutting-edge research funded by the Office of Naval Research. I developed a state-of-the-art "state-connector" for a global path planner, creating time-optimal trajectories in the presence of uniform wind. My research yielded a 37% improvement over the current state-of-the-art solution and uncovered a bug in the paper "Classification of the Dubins Set" by Shkel and Lumelsky. Both my findings were published in the IEEE RA-L journal and presented at ICRA 2024 in Yokohama, Japan.
+I also contributed to the Biorobotics lab, where I led efforts to establish an innovative electronic waste recycling pipeline supported by Apple.
 
-I also contributed to the [Biorobotics lab](https://biorobotics.org/), where I led efforts to establish an innovative electronic waste recycling pipeline supported by [Apple](https://www.apple.com/).
+Outside of work and academics, I enjoy exploring the world through travel, listening to music, and attending concerts. I've recently taken up running and will be participating in my first 5K this year (add me on Strava!). I also play Flamenco on my Spanish Classical Guitar and love discovering new brunch and coffee spots. I maintain an active lifestyle through gym workouts, hiking, keeping up with the latest technological marvels, and playing or watching soccer (my teams are the Argentina National Team and FC Barcelona).
 
-Outside of work and academics, I enjoy exploring the world through travel, listening to music, and attending concerts. I've recently taken up running and will be participating in my first 5K this year (add me on Strava!). I also play Flamenco on my Spanish Classical Guitar and love discovering new brunch and coffee spots in Columbus. I maintain an active lifestyle through gym workouts, hiking, keeping up with the latest technological marvels, and playing or watching soccer (my teams are the Argentina National Team and FC Barcelona).
-
-Whether you're interested in potential job opportunities or just want to chat about shared interests, I’m always open to connecting. Let's start a conversation!
+Whether you're interested in potential job opportunities or just want to chat about shared interests, I'm always open to connecting. Let's start a conversation!
 
 <h3><center>Companies, Research Labs, Universities and Other Organizations That I Have Worked With:</center></h3>
 
