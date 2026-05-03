@@ -16,7 +16,10 @@ key: page-home
 
 ## Forward Deployed Robotics Engineer | FieldAI (Feb 2026 - Present)
 
-<WORK IN PROGRESS: More details to be added soon!>
+- Deploy **[Boston Dynamics Spot](https://bostondynamics.com/products/spot/)** robots on active customer sites, integrating FieldAI's full autonomy stack into real-world industrial environments
+- Develop and deliver **client-specific features** outside the core product roadmap, bridging customer operational needs with FieldAI's platform capabilities
+- Act as the **primary feedback loop** between the field and engineering teams — systematically reproducing, documenting, and triaging bugs discovered in production deployments to drive rapid resolution
+- Serve as **L3 escalation support**: own and resolve complex field issues that cannot be addressed by application engineers after two rounds of debugging, and route unresolved cases to the appropriate engineering teams
 
 ## Robotics Deployment Engineer | Path Robotics (Sept 2023 - Feb 2026)
 ### Multi Arm Robot Deployment
