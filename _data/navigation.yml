@@ -27,7 +27,7 @@ header:
       en-CA   : *EN
       en-AU   : *EN
       # @end locale config
-    url: Sagar-Sachdev-Resume.pdf
+    url: /resume.html
   - titles:
       # @start locale config
       en      : &EN       Class Projects

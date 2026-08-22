@@ -12,7 +12,7 @@ key: page-home
 # mode: immersive
 ---
 
-<h1 align="center">Work Experience</h1>'
+<h1 align="center">Work Experience</h1>
 
 ## Forward Deployed Robotics Engineer | FieldAI (Feb 2026 - Present)
 
