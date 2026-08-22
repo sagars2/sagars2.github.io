@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 bundle exec jekyll serve --livereload
 ```
 
-Site is served at **http://127.0.0.1:4000/sagars2.github.io/** (note the subdirectory path — `baseurl` is `/sagars2.github.io`).
+Site is served at **http://127.0.0.1:4000/**. `baseurl` is empty because this is a GitHub Pages user site served at the domain root — the same baseurl CI deploys with, so local paths match production.
 
 ## Architecture
 
@@ -23,6 +23,6 @@ This is a personal portfolio site built on the [TeXt Theme](https://github.com/k
 
 **Site-wide configuration** is in `_config.yml` — skin, analytics (Google `G-6JLF3670L1`), author social links, and `baseurl`/`url`.
 
-**Assets**: Images live in `assets/images/pics/`. There is no image processing pipeline — drop files directly there and reference them with the `baseurl`-relative path.
+**Assets**: Images live in `assets/images/`. There is no image processing pipeline — drop files directly there and reference them with root-absolute paths (e.g. `/assets/images/pics/foo.png`).
 
 **Theme files** (`_layouts/`, `_includes/`, `_sass/`) are local overrides of the upstream TeXt theme. Upstream is 443+ commits ahead of the merge base; merging upstream is high-risk due to likely conflicts with these customized files.

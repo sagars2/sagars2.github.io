@@ -19,7 +19,7 @@
 text_skin: ocean # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
 highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : "https://sagars2.github.io" # the base hostname & protocol for your site e.g. https://www.someone.com
-baseurl : /sagars2.github.io # does not include hostname
+baseurl : "" # does not include hostname; empty because this user site is served at the domain root (matches the CI build)
 title   : Sagar Sachdev
 description: > # this means to ignore newlines until "Language & timezone"
   Forward Deployed Robotics Engineer at Field AI | Former Graduate Researcher at the AirLab at Carnegie Mellon University | MS in Mechanical Engineering (Robotics) Graduate from Carnegie Mellon University
