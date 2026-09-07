@@ -31,13 +31,16 @@ If any of that resonates — or you just want to connect — my inbox is open.
 <ul class="logo-wall">
   <li>
       <picture>
-        <source srcset="/assets/images/logos/fieldai-dark.png" media="(prefers-color-scheme: dark)">
-        <img src="/assets/images/logos/fieldai.png" alt="FieldAI" loading="lazy">
+        <source srcset="/assets/images/logos/fieldai-dark.svg" media="(prefers-color-scheme: dark)">
+        <img src="/assets/images/logos/fieldai.svg" alt="FieldAI" loading="lazy">
       </picture>
       <span>FieldAI</span>
   </li>
   <li>
-      <img src="/assets/images/logos/path-robotics.png" alt="Path Robotics" loading="lazy">
+      <picture>
+        <source srcset="/assets/images/logos/path-robotics-dark.svg" media="(prefers-color-scheme: dark)">
+        <img src="/assets/images/logos/path-robotics.svg" alt="Path Robotics" loading="lazy">
+      </picture>
       <span>Path Robotics</span>
   </li>
   <li>
@@ -55,13 +58,16 @@ If any of that resonates — or you just want to connect — my inbox is open.
       <span>Biorobotics Lab at Carnegie Mellon University</span>
   </li>
   <li>
-      <img src="/assets/images/logos/uiuc.png" alt="University of Illinois at Urbana-Champaign" loading="lazy">
+      <picture>
+        <source srcset="/assets/images/logos/uiuc-dark.svg" media="(prefers-color-scheme: dark)">
+        <img src="/assets/images/logos/uiuc.svg" alt="University of Illinois at Urbana-Champaign" loading="lazy">
+      </picture>
       <span>University of Illinois at Urbana-Champaign</span>
   </li>
   <li>
       <picture>
-        <source srcset="/assets/images/logos/apple-dark.png" media="(prefers-color-scheme: dark)">
-        <img src="/assets/images/logos/apple.png" alt="Apple" loading="lazy">
+        <source srcset="/assets/images/logos/apple-dark.svg" media="(prefers-color-scheme: dark)">
+        <img src="/assets/images/logos/apple.svg" alt="Apple" loading="lazy">
       </picture>
       <span>Apple</span>
   </li>
@@ -71,8 +77,8 @@ If any of that resonates — or you just want to connect — my inbox is open.
   </li>
   <li>
       <picture>
-        <source srcset="/assets/images/logos/robotics-institute-dark.png" media="(prefers-color-scheme: dark)">
-        <img src="/assets/images/logos/robotics-institute.png" alt="The Robotics Institute at Carnegie Mellon University" loading="lazy">
+        <source srcset="/assets/images/logos/robotics-institute-dark.svg" media="(prefers-color-scheme: dark)">
+        <img src="/assets/images/logos/robotics-institute.svg" alt="The Robotics Institute at Carnegie Mellon University" loading="lazy">
       </picture>
       <span>The Robotics Institute at Carnegie Mellon University</span>
   </li>
