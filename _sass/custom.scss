@@ -1,3 +1,697 @@
 /* start custom scss snippet */
 
+// Shared page typography
+// ----------------------
+// Space Grotesk carries headings and UI chrome; Inter carries body copy.
+// Every page title uses the same face, weight and accent rule so the site
+// reads as one design instead of per-page one-offs.
+
+$page-title-font: 'Space Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$body-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+body {
+  font-family: $body-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.article__content {
+  font-size: 1rem;
+  line-height: 1.7;
+
+  p {
+    margin: 1.1em 0;
+  }
+}
+
+.page-title,
+.article__content .page-title {
+  display: block;
+  margin: map-get($spacers, 3) 0 map-get($spacers, 2);
+  font-family: $page-title-font;
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: $text-color-d;
+  text-align: center;
+  border-bottom-width: 0; // theme's split-line replaced by the accent rule below
+
+  &::after {
+    display: block;
+    width: 30%;
+    max-width: 15rem;
+    height: 3px;
+    margin: map-get($spacers, 2) auto 0;
+    content: "";
+    background-color: $main-color-1;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 2rem;
+  }
+}
+
+// Circular portrait above the home page title. The source photo is a wide
+// environmental shot, so the image is scaled up inside a round window and
+// offset to frame the face; the percentages are relative to the container, so
+// the crop holds at any avatar size.
+.hero-avatar {
+  position: relative;
+  width: 20rem;
+  height: 14rem; // 10:7 — an ellipse with room either side of the subject
+  margin: map-get($spacers, 4) auto 0;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 6px 22px rgba(#000, .18);
+
+  // Scoped through .article__content to outrank the theme's image cap, which
+  // would otherwise hold the photo at container width and defeat the crop.
+  // The offsets frame the subject; being percentages of the box, they hold at
+  // any size that keeps the 10:7 ratio below.
+  .article__content & img,
+  & img {
+    position: absolute;
+    top: -20%;
+    left: -51%;
+    width: 200%;
+    max-width: none;
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 15rem;
+    height: 10.5rem;
+  }
+}
+
+// Home page hero: same treatment, larger, with the subtitle beneath.
+.page-title--hero {
+  margin-top: map-get($spacers, 4);
+  font-size: 4.5rem;
+
+  @include media-breakpoint-down(md) {
+    font-size: 2.6rem;
+  }
+}
+
+.page-subtitle {
+  margin: map-get($spacers, 3) 0 map-get($spacers, 5);
+  font-family: $page-title-font;
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: $text-color-l;
+  text-align: center;
+
+  @include media-breakpoint-down(md) {
+    font-size: 1.1rem;
+  }
+}
+
+.article__content {
+  // Section headings sit on a consistent rhythm across every page. The size is
+  // set so the longest heading on the site — the full lab-plus-university
+  // lines on Research and Class Projects — stays on one line at full width.
+  h2 {
+    margin-top: map-get($spacers, 5);
+    font-family: $page-title-font;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -.02em;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 1.15rem;
+    }
+    @include media-breakpoint-down(md) {
+      font-size: 1.05rem;
+    }
+  }
+
+  h3 {
+    font-family: $page-title-font;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -.01em;
+
+    @include media-breakpoint-down(md) {
+      font-size: 1rem;
+    }
+  }
+
+  // Heading with trailing meta: title on the left, the date range or the
+  // institution pushed to the right edge. Used by the job headings on Work
+  // Experience and the lab/course headings on Research and Class Projects, so
+  // it is not tied to a heading level.
+  .role {
+    display: flex;
+    gap: map-get($spacers, 3);
+    align-items: baseline;
+    justify-content: space-between;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      gap: .15rem;
+    }
+  }
+
+  // One body size for bullets everywhere. Research and class-project pages
+  // previously set this inline at 16px while other pages inherited a smaller
+  // default, which made the same content look different page to page.
+  li {
+    font-size: 16px;
+  }
+
+  // Consistent breathing room between entries on the portfolio pages.
+  .item {
+    margin-bottom: map-get($spacers, 4);
+  }
+}
+
+.role__meta {
+  flex-shrink: 0;
+  font-size: .8em;
+  font-weight: 500;
+  color: $text-color-l;
+  letter-spacing: 0;
+  white-space: nowrap;
+
+  // Institution names are long; let them wrap rather than overflow.
+  @include media-breakpoint-down(lg) {
+    white-space: normal;
+    text-align: right;
+  }
+}
+
+// Logo wall
+// ---------
+// Individual logos with real text captions, replacing the flat composite PNG
+// so both the artwork and the labels follow the colour scheme.
+.logo-wall {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: map-get($spacers, 4) map-get($spacers, 3);
+  padding: 0;
+  margin: map-get($spacers, 4) 0;
+  list-style: none;
+
+  > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    text-align: center;
+    list-style: none;
+  }
+
+  img {
+    width: auto;
+    max-width: 100%;
+    height: 4rem;
+    object-fit: contain;
+  }
+
+  span {
+    margin-top: map-get($spacers, 2);
+    font-size: .78rem;
+    line-height: 1.35;
+    color: $text-color-l;
+  }
+
+  @include media-breakpoint-down(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include media-breakpoint-down(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Row of links under a project entry.
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: map-get($spacers, 4);
+  justify-content: center;
+  margin-top: map-get($spacers, 2);
+  font-weight: 600;
+}
+
+// Shown on the Music page until the first artist is added to _data/artists.yml.
+.music-placeholder {
+  padding: map-get($spacers, 5) map-get($spacers, 3);
+  margin: map-get($spacers, 4) 0;
+  color: $text-color-l;
+  text-align: center;
+  border: 1px dashed $border-color-l;
+  border-radius: map-get($base, border-radius);
+}
+
+.music-placeholder__title {
+  margin: 0 0 map-get($spacers, 2);
+  font-family: $page-title-font;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $text-color;
+}
+
+// Artists seen
+// ------------
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: map-get($spacers, 3);
+  margin: map-get($spacers, 4) 0;
+}
+
+.artist-card {
+  display: flex;
+  flex-direction: column;
+  padding: map-get($spacers, 3);
+  border: 1px solid $border-color-l;
+  border-radius: map-get($base, border-radius);
+  transition: box-shadow map-get($animation, duration) map-get($animation, timing-function),
+              transform map-get($animation, duration) map-get($animation, timing-function);
+
+  &:hover {
+    box-shadow: 0 6px 18px rgba(#000, .1);
+    transform: translateY(-2px);
+  }
+}
+
+.artist-card__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: map-get($spacers, 2);
+}
+
+.artist-card__name {
+  margin: 0;
+  font-family: $page-title-font;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+// "x3" badge for artists seen more than once.
+.artist-card__count {
+  flex-shrink: 0;
+  padding: .1rem .5rem;
+  font-size: .8rem;
+  font-weight: 700;
+  color: $text-color-3;
+  background-color: $main-color-3;
+  border-radius: 1rem;
+}
+
+.artist-card__shows,
+.article__content .artist-card__shows {
+  margin: map-get($spacers, 2) 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: .35rem;
+    font-size: .9rem;
+    line-height: 1.4;
+    color: $text-color-l;
+  }
+}
+
+.artist-card__year {
+  font-weight: 700;
+  color: $text-color;
+}
+
+// Header brand
+// ------------
+// The bar used to be a lone logo with a wide empty gap before the nav; the
+// name and role fill that space and make the header read as a masthead.
+// A shorter bar with a smaller mark and lighter type, so six nav items plus
+// the name no longer crowd each other.
+.header__title,
+.navigation > ul {
+  height: 4rem;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+
+  & > svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: map-get($spacers, 2);
+  }
+}
+
+.header__name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: map-get($spacers, 2);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.header__name-text {
+  font-family: $page-title-font;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.header__name-role {
+  font-size: .7rem;
+  font-weight: 400;
+  color: rgba($header-text-color, .7);
+
+  // Below the widest layouts the name alone carries the brand.
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+}
+
+.navigation__item {
+  font-family: $page-title-font;
+  font-size: .92rem;
+  font-weight: 500;
+}
+
+// Sticky header
+// -------------
+// The bar stays with you through the continuous feed so the tabs can show
+// which section you are in.
+.page__header {
+  position: sticky;
+  top: 0;
+  z-index: map-get($z-indexes, actions);
+  transition: box-shadow .2s ease-in-out;
+}
+
+.page__header--stuck {
+  box-shadow: 0 1px 14px rgba(#000, .1);
+}
+
+// Sticky footer: pinned to the bottom of the viewport while there is still
+// page below, then it settles into place at the end of the feed.
+.page__footer {
+  position: sticky;
+  bottom: 0;
+  z-index: map-get($z-indexes, actions) - 1; // sits under the header
+  transition: box-shadow .2s ease-in-out;
+}
+
+.page__footer--floating {
+  box-shadow: 0 -1px 14px rgba(#000, .1);
+}
+
+// Trim the bar down; it is on screen the whole time now.
+.footer.py-4 {
+  padding-top: map-get($spacers, 2) !important;
+  padding-bottom: map-get($spacers, 2) !important;
+}
+
+// Sliding indicator that travels between tabs as sections scroll past.
+.navigation > ul {
+  position: relative;
+}
+
+.navigation__indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  pointer-events: none;
+  background-color: $main-color-1;
+  border-radius: 2px;
+  opacity: 0;
+  transition: transform .32s cubic-bezier(.4, 0, .2, 1),
+              width .32s cubic-bezier(.4, 0, .2, 1),
+              top .32s cubic-bezier(.4, 0, .2, 1),
+              opacity .2s ease-in-out;
+
+  @include media-breakpoint-down(md) {
+    display: none; // nav wraps on small screens; fall back to the static rule
+  }
+}
+
+.navigation__indicator--ready {
+  opacity: 1;
+}
+
+// With the sliding indicator present the theme's per-item underline would
+// double up, so hide it wherever the indicator is in play.
+.navigation--indicated .navigation__item--active::after {
+  border-bottom-color: transparent;
+}
+
+// Continuous scroll
+// -----------------
+// Divider announcing the next page as it flows in.
+.continuous-divider {
+  display: flex;
+  align-items: center;
+  margin: map-get($spacers, 5) 0 map-get($spacers, 4);
+  color: $text-color-l;
+
+  &::before,
+  &::after {
+    flex: 1;
+    height: 1px;
+    content: "";
+    background-color: $border-color-l;
+  }
+
+  span {
+    padding: 0 map-get($spacers, 3);
+    font-family: $page-title-font;
+    font-size: .78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    white-space: nowrap;
+  }
+}
+
+// An embedded PDF swallows the wheel, which would stall the feed mid-scroll.
+// In the continuous feed it is a preview only; the Resume page itself and the
+// download link above it stay fully interactive.
+.continuous-section object[type="application/pdf"] {
+  pointer-events: none;
+}
+
+// Three-dot pulse shown while the next page is being fetched.
+.continuous-loader {
+  display: flex;
+  gap: .4rem;
+  align-items: center;
+  justify-content: center;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+.continuous-loader--active {
+  height: auto;
+  margin: map-get($spacers, 4) 0;
+  opacity: 1;
+}
+
+.continuous-loader__dot {
+  width: .45rem;
+  height: .45rem;
+  background-color: $main-color-1;
+  border-radius: 50%;
+  animation: continuous-pulse 1.1s ease-in-out infinite;
+
+  &:nth-child(2) { animation-delay: .15s; }
+  &:nth-child(3) { animation-delay: .3s; }
+}
+
+@keyframes continuous-pulse {
+  0%, 100% { opacity: .25; transform: scale(.8); }
+  50%      { opacity: 1;   transform: scale(1); }
+}
+
+// Dark mode
+// ---------
+// Follows the operating system setting. The theme ships a dark skin, but it is
+// built around orange; this keeps the site's blue identity and only restates
+// the surfaces that actually carry colour.
+$d-bg:            #0f1319;
+$d-surface:       #161b23;
+$d-surface-2:     #1c222c;
+$d-border:        #2b323d;
+$d-text-strong:   rgba(#fff, .92);
+$d-text:          rgba(#fff, .82);
+$d-muted:         rgba(#fff, .55);
+$d-accent:        #58a6ff;
+$d-accent-hover:  #86c0ff;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+
+  body,
+  .page__main-inner {
+    background-color: $d-bg;
+  }
+
+  .page__main {
+    color: $d-text;
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: $d-text-strong;
+  }
+  h6 {
+    color: $d-muted;
+  }
+
+  a, a:link, a:visited {
+    color: $d-accent;
+  }
+  .root[data-is-touch="false"] a:hover {
+    color: $d-accent-hover;
+  }
+
+  .header {
+    background: $d-surface;
+  }
+  .header a,
+  .header a:link,
+  .header a:visited {
+    color: $d-accent;
+  }
+  .header__name-text {
+    color: $d-text-strong;
+  }
+  .header__name-role {
+    color: $d-muted;
+  }
+  // The mark is a fixed dark grey inside the SVG, so lift it off the dark bar.
+  .header__brand > svg .st0 {
+    fill: rgba(#fff, .78);
+  }
+  .page__header--stuck {
+    box-shadow: 0 1px 16px rgba(#000, .55);
+  }
+
+  .footer {
+    color: $d-accent;
+    background: $d-surface;
+
+    // Plain text in the footer needs real contrast, not the link colour.
+    .site-info {
+      color: rgba(#fff, .62);
+    }
+  }
+
+  .button--secondary,
+  .button--secondary:link,
+  .button--secondary:visited {
+    color: $d-accent;
+    background-color: rgba($d-accent, .12);
+  }
+
+  .article__content {
+    h1, h2 {
+      border-bottom-color: $d-border;
+    }
+    code, pre {
+      background-color: rgba(#fff, .07);
+    }
+    blockquote {
+      border-color: $d-border;
+    }
+  }
+
+  // Matches the specificity of the light rule, which is scoped through
+  // .article__content and would otherwise keep the title near-black.
+  .page-title,
+  .article__content .page-title {
+    color: $d-text-strong;
+
+    &::after {
+      background-color: $d-accent;
+    }
+  }
+
+  .page-subtitle,
+  .role__meta {
+    color: $d-muted;
+  }
+
+  .hero-avatar {
+    box-shadow: 0 6px 22px rgba(#000, .6);
+  }
+
+  // Logo artwork swaps to its light variant via <picture>; the captions are
+  // real text, so they only need the muted dark-mode tone.
+  .logo-wall span {
+    color: $d-muted;
+  }
+
+  .navigation__indicator,
+  .continuous-loader__dot {
+    background-color: $d-accent;
+  }
+
+  .continuous-divider {
+    color: $d-muted;
+
+    &::before,
+    &::after {
+      background-color: $d-border;
+    }
+  }
+
+  .artist-card {
+    background-color: $d-surface;
+    border-color: $d-border;
+
+    &:hover {
+      box-shadow: 0 6px 18px rgba(#000, .5);
+    }
+  }
+  .artist-card__count {
+    color: $d-accent;
+    background-color: rgba($d-accent, .15);
+  }
+  // Sits on the raised card surface, so it needs more than the page muted tone.
+  .artist-card__shows li {
+    color: rgba(#fff, .68);
+  }
+  .artist-card__year {
+    color: $d-text;
+  }
+
+  .music-placeholder {
+    color: $d-muted;
+    border-color: $d-border;
+  }
+  .music-placeholder__title {
+    color: $d-text-strong;
+  }
+
+  .page__sidebar {
+    background-color: $d-surface-2;
+    border-color: $d-border;
+  }
+
+  hr {
+    border-color: $d-border;
+  }
+
+  ::selection {
+    background-color: rgba($d-accent, .35);
+  }
+}
+
 /* end custom scss snippet */

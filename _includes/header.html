@@ -19,7 +19,10 @@
           {%- assign _paths_root = site.paths.root | default: site.data.variables.default.paths.root  -%}
           {%- include snippets/get-nav-url.html path=_paths_root -%}
           {%- if site.title -%}
-            <a title="{%- if site.description -%}{{ site.description }}{%- endif -%}" href="{{ __return }}"></a>
+            <a class="header__name" title="{%- if site.description -%}{{ site.description }}{%- endif -%}" href="{{ __return }}">
+              <span class="header__name-text">{{ site.title }}</span>
+              <span class="header__name-role">Forward Deployed Robotics Engineer</span>
+            </a>
           {%- endif -%}
         </div>
         {%- if site.search.provider -%}
