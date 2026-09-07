@@ -1,3 +1,417 @@
 <!-- start custom main bottom snippet -->
 
+{%- comment -%}
+  Continuous scroll: as you approach the end of a page, the next page in the
+  nav order is fetched and appended inline, so scrolling flows straight into it
+  with no reload. The address bar and nav highlight follow whichever section is
+  in view. Page order comes from _data/navigation.yml so it stays in sync.
+{%- endcomment -%}
+{%- if site.data.navigation.header -%}
+<script>
+  // Sticky header: shadow once the page has moved, and a sliding indicator
+  // that follows whichever tab is active. It watches the active class rather
+  // than being driven directly, so it works for ordinary navigation as well as
+  // for the continuous feed below.
+  (function () {
+    // This script sits inside the content column, so the footer markup that
+    // follows it has not been parsed yet; wait for the document before
+    // wiring the bars up.
+    function whenReady(fn) {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fn);
+      } else {
+        fn();
+      }
+    }
+
+    function normalizePath(path) {
+      return path.replace(/index\.html$/, '').replace(/\/$/, '') || '/';
+    }
+
+    // Scrolling rewrites the address bar to whichever section is in view, so a
+    // nav link can end up pointing at the URL the page already claims to be
+    // on. The browser then treats the click as a no-op and nothing moves.
+    // Handle tab clicks ourselves: jump to that section if it is already in
+    // the feed, otherwise let the browser navigate as normal.
+    document.addEventListener('click', function (e) {
+      if (e.defaultPrevented || e.button !== 0 ||
+          e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) { return; }
+      var link = e.target.closest ? e.target.closest('.navigation__item a') : null;
+      if (!link) { return; }
+
+      var href = link.getAttribute('href') || '';
+      var want = normalizePath(href);
+      var target = null;
+      var sections = document.querySelectorAll('[data-continuous-url]');
+      for (var i = 0; i < sections.length; i++) {
+        if (normalizePath(sections[i].getAttribute('data-continuous-url')) === want) {
+          target = sections[i]; break;
+        }
+      }
+
+      // Not in the feed and not the current page: a normal navigation is right.
+      if (!target && want !== normalizePath(window.location.pathname)) { return; }
+
+      e.preventDefault();
+      var bar = document.querySelector('.page__header');
+      var offset = bar ? bar.getBoundingClientRect().height : 0;
+      var top = target
+        ? Math.max(0, window.pageYOffset + target.getBoundingClientRect().top - offset - 8)
+        : 0;
+      // Smooth is pleasant nearby but interminable across a long feed.
+      var startY = window.pageYOffset;
+      var far = Math.abs(top - startY) > 3000;
+      window.scrollTo({ top: top, behavior: far ? 'auto' : 'smooth' });
+
+      // Smooth scrolling is silently a no-op in some contexts, which would
+      // leave the click doing nothing at all. If we have not budged shortly
+      // after asking, jump there outright.
+      if (!far) {
+        window.setTimeout(function () {
+          if (Math.abs(window.pageYOffset - startY) < 4 &&
+              Math.abs(window.pageYOffset - top) > 4) {
+            window.scrollTo(0, top);
+          }
+        }, 250);
+      }
+
+      history.replaceState(null, '', href);
+
+      // Highlight the clicked tab straight away rather than waiting for the
+      // section observer to catch up once the scroll settles.
+      var items = document.querySelectorAll('.navigation__item');
+      for (var j = 0; j < items.length; j++) {
+        var a = items[j].querySelector('a');
+        var on = !!a && normalizePath(a.getAttribute('href') || '') === want;
+        if (on !== items[j].classList.contains('navigation__item--active')) {
+          items[j].classList.toggle('navigation__item--active', on);
+        }
+      }
+    });
+
+    whenReady(function () {
+    var header = document.querySelector('.page__header');
+    var footer = document.querySelector('.page__footer');
+    if (header || footer) {
+      // classList.toggle rewrites the attribute even when the state is
+      // unchanged, which restarts the box-shadow transition. With a
+      // ResizeObserver firing as the feed grows, that would leave the shadow
+      // permanently mid-fade, so only write on a real change.
+      function setClass(el, name, on) {
+        if (on !== el.classList.contains(name)) { el.classList.toggle(name, on); }
+      }
+
+      var onStick = function () {
+        if (header) {
+          setClass(header, 'page__header--stuck', window.pageYOffset > 4);
+        }
+        if (footer) {
+          // Shadowed only while the bar is floating over content; once the end
+          // of the page is reached it has settled and needs no lift.
+          var atEnd = window.innerHeight + window.pageYOffset >=
+                      document.documentElement.scrollHeight - 4;
+          setClass(footer, 'page__footer--floating', !atEnd);
+        }
+      };
+      window.addEventListener('scroll', onStick, { passive: true });
+      window.addEventListener('resize', onStick, { passive: true });
+      // The page grows as images settle and the feed appends pages, which
+      // changes whether the footer is floating without any scroll happening.
+      if (window.ResizeObserver) {
+        new ResizeObserver(onStick).observe(document.body);
+      }
+      window.addEventListener('load', onStick);
+      onStick();
+    }
+    });
+
+    var list = document.querySelector('.navigation > ul');
+    if (!list) { return; }
+
+    var indicator = document.createElement('span');
+    indicator.className = 'navigation__indicator';
+    list.appendChild(indicator);
+    list.parentNode.classList.add('navigation--indicated');
+
+    // classList.add/remove rewrites the attribute even when the class is
+    // already in the desired state, which would re-trigger the observer below
+    // and spin forever. Only touch it on a real change.
+    var READY = 'navigation__indicator--ready';
+    function setReady(on) {
+      if (on !== indicator.classList.contains(READY)) {
+        indicator.classList.toggle(READY, on);
+      }
+    }
+
+    function place() {
+      var active = list.querySelector('.navigation__item--active');
+      if (!active || window.getComputedStyle(indicator).display === 'none') {
+        setReady(false);
+        return;
+      }
+      indicator.style.transform = 'translateX(' + active.offsetLeft + 'px)';
+      indicator.style.width = active.offsetWidth + 'px';
+      indicator.style.top = (active.offsetTop + active.offsetHeight) + 'px';
+      setReady(true);
+    }
+
+    // Re-place whenever the active tab changes, whoever changed it. Mutations
+    // on the indicator itself are ignored so it never chases its own tail.
+    new MutationObserver(function (records) {
+      for (var i = 0; i < records.length; i++) {
+        if (records[i].target !== indicator) { place(); return; }
+      }
+    }).observe(list, {
+      subtree: true, attributes: true, attributeFilter: ['class']
+    });
+    window.addEventListener('resize', place, { passive: true });
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(place); }
+    place();
+  })();
+
+  (function () {
+    var PAGES = [
+      {%- for _item in site.data.navigation.header -%}
+        {%- include snippets/get-nav-url.html path=_item.url -%}
+        {%- assign _nav_url = __return -%}
+        {%- if _item.title -%}
+          {%- assign _nav_title = _item.title -%}
+        {%- else -%}
+          {%- include snippets/get-string-from-locale-config.html locale=_item.titles -%}
+          {%- assign _nav_title = __return -%}
+        {%- endif -%}
+        {%- unless forloop.first -%},{%- endunless -%}
+        { url: {{ _nav_url | jsonify }}, title: {{ _nav_title | jsonify }} }
+      {%- endfor -%}
+    ];
+
+    // Only real pages of this site take part; a PDF or external link is
+    // skipped so continuous scroll never pulls in something unrenderable.
+    PAGES = PAGES.filter(function (p) { return /\.html$/.test(p.url) || /\/$/.test(p.url); });
+
+    function normalize(path) {
+      return path.replace(/index\.html$/, '').replace(/\/$/, '') || '/';
+    }
+
+    var startIndex = -1;
+    var here = normalize(window.location.pathname);
+    for (var i = 0; i < PAGES.length; i++) {
+      if (normalize(PAGES[i].url) === here) { startIndex = i; break; }
+    }
+    if (startIndex === -1) { return; }
+
+    var content = document.querySelector('.js-article-content');
+    var article = content && content.parentNode;
+    if (!article) { return; }
+
+    // Respect a reader who has asked for reduced motion / minimal surprises.
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
+
+    var DOWN_MARGIN = 1400; // px from the bottom at which the next page loads
+    var UP_MARGIN = 800;    // px from the top at which the previous page loads
+    var firstIndex = startIndex;
+    var lastIndex = startIndex;
+    var loadingDown = false;
+    var loadingUp = false;
+    var baseTitle = document.title;
+
+    // The page you arrived on is the feed's starting section.
+    content.setAttribute('data-continuous-url', PAGES[startIndex].url);
+    content.setAttribute('data-continuous-title', baseTitle);
+    content.setAttribute('data-continuous-label', PAGES[startIndex].title);
+
+    function makeLoader() {
+      var el = document.createElement('div');
+      el.className = 'continuous-loader';
+      el.innerHTML = '<span class="continuous-loader__dot"></span>' +
+                     '<span class="continuous-loader__dot"></span>' +
+                     '<span class="continuous-loader__dot"></span>';
+      return el;
+    }
+    function removeEl(el) {
+      if (el && el.parentNode) { el.parentNode.removeChild(el); }
+    }
+
+    var loaderDown = makeLoader();
+    article.appendChild(loaderDown);
+
+    // Loader for pages above; it stays pinned as the topmost child.
+    var loaderUp = makeLoader();
+    article.insertBefore(loaderUp, article.firstChild);
+    if (!PAGES[firstIndex - 1]) { removeEl(loaderUp); }
+
+    function setActiveNav(url) {
+      var target = normalize(url);
+      var items = document.querySelectorAll('.navigation__item');
+      for (var i = 0; i < items.length; i++) {
+        var link = items[i].querySelector('a');
+        if (!link) { continue; }
+        var match = normalize(link.getAttribute('href') || '');
+        items[i].classList.toggle('navigation__item--active', match === target);
+      }
+    }
+
+    // Track which section fills the viewport and mirror it in the URL.
+    var current = PAGES[startIndex].url;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) { return; }
+        var url = entry.target.getAttribute('data-continuous-url');
+        var title = entry.target.getAttribute('data-continuous-title');
+        if (!url || url === current) { return; }
+        current = url;
+        history.replaceState(null, '', url);
+        if (title) { document.title = title; }
+        setActiveNav(url);
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+
+    observer.observe(content);
+
+    function makeDivider(label) {
+      var divider = document.createElement('div');
+      divider.className = 'continuous-divider';
+      var span = document.createElement('span');
+      span.textContent = label || '';
+      divider.appendChild(span);
+      return divider;
+    }
+
+    function buildSection(page, doc, incoming) {
+      var section = document.createElement('div');
+      section.className = 'continuous-section';
+      section.setAttribute('data-continuous-url', page.url);
+      section.setAttribute('data-continuous-title', doc.title || page.title);
+      section.setAttribute('data-continuous-label', page.title);
+      while (incoming.firstChild) { section.appendChild(incoming.firstChild); }
+      return section;
+    }
+
+    function parse(html) {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      return { doc: doc, incoming: doc.querySelector('.js-article-content') };
+    }
+
+    function appendPage(page, html) {
+      var parsed = parse(html);
+      if (!parsed.incoming) { return false; }
+
+      var section = buildSection(page, parsed.doc, parsed.incoming);
+      section.insertBefore(makeDivider(page.title), section.firstChild);
+
+      article.insertBefore(section, loaderDown);
+      observer.observe(section);
+      return true;
+    }
+
+    function prependPage(page, html) {
+      var parsed = parse(html);
+      if (!parsed.incoming) { return false; }
+
+      // The section currently at the top of the feed; the new one goes above it.
+      var below = article.querySelector('[data-continuous-url]');
+      if (!below) { return false; }
+
+      var section = buildSection(page, parsed.doc, parsed.incoming);
+      // The divider between them announces the section being scrolled into,
+      // which when reading downwards is the one that was already there.
+      var divider = makeDivider(below.getAttribute('data-continuous-label'));
+
+      // Prepending pushes everything down, so measure the shift the insert
+      // actually caused and give the reader back their exact viewport.
+      var anchor = below.getBoundingClientRect().top;
+      article.insertBefore(divider, below);
+      article.insertBefore(section, divider);
+      var shift = below.getBoundingClientRect().top - anchor;
+      if (shift) { window.scrollTo(0, window.pageYOffset + shift); }
+
+      observer.observe(section);
+      return true;
+    }
+
+    // Both ends reached: nothing left to watch for.
+    function maybeFinish() {
+      if (firstIndex === 0 && lastIndex === PAGES.length - 1) {
+        window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', onScroll);
+      }
+    }
+
+    function loadNext() {
+      if (loadingDown) { return; }
+      var page = PAGES[lastIndex + 1];
+      if (!page) { removeEl(loaderDown); maybeFinish(); return; }
+
+      loadingDown = true;
+      loaderDown.classList.add('continuous-loader--active');
+
+      fetch(page.url, { credentials: 'same-origin' })
+        .then(function (res) {
+          if (!res.ok) { throw new Error('HTTP ' + res.status); }
+          return res.text();
+        })
+        .then(function (html) {
+          if (appendPage(page, html)) { lastIndex++; }
+          loadingDown = false;
+          loaderDown.classList.remove('continuous-loader--active');
+          if (!PAGES[lastIndex + 1]) { removeEl(loaderDown); maybeFinish(); }
+          else { check(); } // keep filling if the viewport is still short
+        })
+        .catch(function () {
+          // Leave the page as-is; the nav links still work.
+          loadingDown = false;
+          removeEl(loaderDown);
+        });
+    }
+
+    function loadPrev() {
+      if (loadingUp) { return; }
+      var page = PAGES[firstIndex - 1];
+      if (!page) { removeEl(loaderUp); maybeFinish(); return; }
+
+      loadingUp = true;
+      loaderUp.classList.add('continuous-loader--active');
+
+      fetch(page.url, { credentials: 'same-origin' })
+        .then(function (res) {
+          if (!res.ok) { throw new Error('HTTP ' + res.status); }
+          return res.text();
+        })
+        .then(function (html) {
+          if (prependPage(page, html)) { firstIndex--; }
+          loadingUp = false;
+          loaderUp.classList.remove('continuous-loader--active');
+          if (!PAGES[firstIndex - 1]) { removeEl(loaderUp); maybeFinish(); }
+          else { check(); }
+        })
+        .catch(function () {
+          loadingUp = false;
+          removeEl(loaderUp);
+        });
+    }
+
+    function check() {
+      var remaining = document.documentElement.scrollHeight - (window.innerHeight + window.pageYOffset);
+      if (remaining < DOWN_MARGIN) { loadNext(); }
+      if (window.pageYOffset < UP_MARGIN) { loadPrev(); }
+    }
+
+    // Time-based throttle rather than requestAnimationFrame: rAF callbacks are
+    // deferred while the tab is not rendering, which would strand the throttle
+    // flag and silently kill the feed.
+    var lastCheck = 0;
+    function onScroll() {
+      var now = Date.now();
+      if (now - lastCheck < 120) { return; }
+      lastCheck = now;
+      check();
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    check();
+  })();
+</script>
+{%- endif -%}
+
 <!-- end custom main bottom snippet -->
