@@ -31,8 +31,6 @@ key: page-home
         <li> Got a 13% higher accuracy when testing against shallow ML techniques for 25 artists</li>
       </ul>
       <h3 markdown="1" align="center">[Click for more details](https://github.com/sagars2/CMU_24787_Final_Project/blob/main/AIML_Final_Project/art_classifiation_report.pdf)</h3>
-      <br>
-      <br>
     </div>
   </div>
 </div>
@@ -58,7 +56,6 @@ key: page-home
         <li> Goal: Achieving Goal State with maximum reduction in Shannon Entropy without coverage of the same area</li>
       </ul>
       <h3 markdown="1" align="center">[Click for more details](https://docs.google.com/presentation/d/1-fihgc-8xvEf03UOxG9EC_AOIo7JM6kM/edit?usp=sharing&ouid=111440446402993602690&rtpof=true&sd=true)</h3>
-      <br>
     </div>
   </div>
 </div>

@@ -112,7 +112,8 @@ body {
   // set so the longest heading on the site — the full lab-plus-university
   // lines on Research and Class Projects — stays on one line at full width.
   h2 {
-    margin-top: map-get($spacers, 5);
+    margin-top: 2.25rem;
+    margin-bottom: map-get($spacers, 2);
     font-family: $page-title-font;
     font-size: 1.25rem;
     font-weight: 700;

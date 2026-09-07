@@ -38,8 +38,6 @@ key: page-home
           <a href="https://bradymoon.com/trochoids">Interactive Demo</a>
         </div>
       </ul>
-      <br>
-      <br>
     </div>
   </div>
 </div>
@@ -66,7 +64,6 @@ key: page-home
           <a href="https://www.apple.com/newsroom/2024/04/apple-cuts-greenhouse-emissions-in-half/">Apple's Update</a> 
         </div>
       </ul>
-      <br>
     </div>
   </div>
 </div>
