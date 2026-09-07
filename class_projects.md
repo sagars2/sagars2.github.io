@@ -10,9 +10,9 @@ titles:
   # @end locale config
 key: page-home
 ---
-<h1 align="center">Graduate Course Projects</h1>
+<h1 class="page-title">Graduate Course Projects</h1>
 
-## Artificial Intelligence and Machine Learning for Engineers | Carnegie Mellon University
+<h2 class="role"><span>Artificial Intelligence and Machine Learning for Engineers</span><span class="role__meta">Carnegie Mellon University</span></h2>
 <div class="item">
   <div class="item__image">
     <div class="card">
@@ -37,7 +37,7 @@ key: page-home
   </div>
 </div>
 
-## Planning and Decision Making | Carnegie Mellon University
+<h2 class="role"><span>Planning and Decision Making</span><span class="role__meta">Carnegie Mellon University</span></h2>
 <div class="item">
   <div class="item__image">
     <div class="card">
@@ -64,8 +64,7 @@ key: page-home
 </div>
 <!-- <h1 align="center">Undergraduate Research</h1> -->
 
-## Localization and Mapping | Carnegie Mellon University
-
+<h2 class="role"><span>Localization and Mapping</span><span class="role__meta">Carnegie Mellon University</span></h2>
 <div class="item">
   <div class="item__image">
     <div class="card card--clickable">
@@ -88,7 +87,7 @@ key: page-home
   </div>
 </div>
 
-## Computer Vision | Carnegie Mellon University
+<h2 class="role"><span>Computer Vision</span><span class="role__meta">Carnegie Mellon University</span></h2>
 <div class="item">
   <div class="item__image">
     <div class="card">
@@ -112,9 +111,9 @@ key: page-home
   </div>
 </div>
 
-<h1 align="center">Undergraduate Course Projects</h1>
+<h1 class="page-title">Undergraduate Course Projects</h1>
 
-## Design for Manufacturability | University of Illinois at Urbana-Champaign (UIUC)
+<h2 class="role"><span>Design for Manufacturability</span><span class="role__meta">University of Illinois at Urbana-Champaign (UIUC)</span></h2>
 <div class="item">
   <div class="item__image">
     <div class="card">
@@ -138,7 +137,7 @@ key: page-home
   </div>
 </div>
 
-## Thermodynamics | University of Illinois at Urbana-Champaign (UIUC)
+<h2 class="role"><span>Thermodynamics</span><span class="role__meta">University of Illinois at Urbana-Champaign (UIUC)</span></h2>
 <div class="item">
   <div class="item__image">
     <div class="card">
@@ -161,7 +160,7 @@ key: page-home
   </div>
 </div>
 
-## Mechatronics | University of Illinois at Urbana-Champaign (UIUC)
+<h2 class="role"><span>Mechatronics</span><span class="role__meta">University of Illinois at Urbana-Champaign (UIUC)</span></h2>
 <div class="item">
   <div class="item__image">
     <div class="card">

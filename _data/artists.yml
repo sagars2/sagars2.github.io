@@ -1,0 +1,28 @@
+# Artists I've seen live.
+#
+# Empty for now — the Music page shows a "to be filled in" placeholder until
+# the first entry is added here, so nothing invented ever ships.
+#
+# Each artist takes a name, a Spotify artist-page link, and a list of shows.
+# The page counts the shows automatically, so seeing someone three times just
+# means adding three entries under `shows`, and it shows a "x3" badge. Artists
+# are listed alphabetically and each artist's shows newest-first.
+#
+# Uncomment and edit to start:
+#
+# - name: Fred again..
+#   spotify: https://open.spotify.com/artist/4oLeXFyACqeem2VImYeBFe
+#   shows:
+#     - year: 2025
+#       event: Coachella
+#       city: Indio, CA
+#     - year: 2024
+#       event: The Warehouse Project
+#       city: Los Angeles, CA
+#
+# - name: Lane 8
+#   spotify: https://open.spotify.com/artist/4Ge8xMJNwt6EDNPcsRlyM4
+#   shows:
+#     - year: 2025
+#       event: This Never Happened
+#       city: Los Angeles, CA

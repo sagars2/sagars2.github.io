@@ -11,7 +11,7 @@ titles:
 key: page-resume
 ---
 
-<h1 align="center">Resume</h1>
+<h1 class="page-title">Resume</h1>
 
 <p align="center"><a href="/Sagar-Sachdev-Resume.pdf" download>Download PDF</a></p>
 
