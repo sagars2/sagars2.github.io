@@ -48,21 +48,21 @@ If any of that resonates — or you just want to connect — my inbox is open.
         <source srcset="/assets/images/logos/airlab-dark.png" media="(prefers-color-scheme: dark)">
         <img src="/assets/images/logos/airlab.png" alt="AirLab at Carnegie Mellon University" loading="lazy">
       </picture>
-      <span>AirLab at Carnegie Mellon University</span>
+      <span>AirLab, CMU</span>
   </li>
   <li>
       <picture>
         <source srcset="/assets/images/logos/biorobotics-dark.png" media="(prefers-color-scheme: dark)">
         <img src="/assets/images/logos/biorobotics.png" alt="Biorobotics Lab at Carnegie Mellon University" loading="lazy">
       </picture>
-      <span>Biorobotics Lab at Carnegie Mellon University</span>
+      <span>Biorobotics Lab, CMU</span>
   </li>
   <li>
       <picture>
         <source srcset="/assets/images/logos/uiuc-dark.svg" media="(prefers-color-scheme: dark)">
         <img src="/assets/images/logos/uiuc.svg" alt="University of Illinois at Urbana-Champaign" loading="lazy">
       </picture>
-      <span>University of Illinois at Urbana-Champaign</span>
+      <span>University of Illinois</span>
   </li>
   <li>
       <picture>
@@ -72,7 +72,9 @@ If any of that resonates — or you just want to connect — my inbox is open.
       <span>Apple</span>
   </li>
   <li>
-      <img src="/assets/images/logos/onr.png" alt="Office of Naval Research" loading="lazy">
+      <picture>
+        <img src="/assets/images/logos/onr.png" alt="Office of Naval Research" loading="lazy">
+      </picture>
       <span>Office of Naval Research</span>
   </li>
   <li>
@@ -80,6 +82,6 @@ If any of that resonates — or you just want to connect — my inbox is open.
         <source srcset="/assets/images/logos/robotics-institute-dark.svg" media="(prefers-color-scheme: dark)">
         <img src="/assets/images/logos/robotics-institute.svg" alt="The Robotics Institute at Carnegie Mellon University" loading="lazy">
       </picture>
-      <span>The Robotics Institute at Carnegie Mellon University</span>
+      <span>Robotics Institute, CMU</span>
   </li>
 </ul>

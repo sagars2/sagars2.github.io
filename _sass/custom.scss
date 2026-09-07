@@ -195,45 +195,60 @@ body {
   margin: map-get($spacers, 4) 0;
   list-style: none;
 
-  // A fixed-height row for the mark keeps the captions on a common baseline
-  // even though the logos range from tall icons to wide wordmarks.
+  // Every cell is the same shape: a fixed-height slot for the mark with the
+  // caption beneath, so the logos sit on one optical line and the rows are
+  // evenly spaced regardless of how wide or tall each logo happens to be.
   > li {
-    display: grid;
-    grid-template-rows: 4rem auto;
-    gap: map-get($spacers, 2);
-    align-content: start; // pack to the top rather than spreading to row height
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-items: center;
+    gap: map-get($spacers, 2);
     margin: 0;
     text-align: center;
     list-style: none;
   }
 
-  // Let the <img> itself be the grid item rather than the <picture> wrapper.
+  // The slot. Note this is a real flex box rather than `display: contents`:
+  // collapsing the <picture> promotes its <source> to a layout box too, which
+  // stole the slot and pushed the image into a row of its own.
   picture {
-    display: contents;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 4rem;
   }
 
-  img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 3.4rem;
-    object-fit: contain;
-  }
-
+  // Reserve two lines so a one-line caption does not make its row shorter
+  // than the neighbouring cells.
   span {
+    display: block;
+    min-height: 2.7em;
     font-size: .78rem;
     line-height: 1.35;
     color: $text-color-l;
   }
 
-  @include media-breakpoint-down(lg) {
+  // The theme's own breakpoints bottom out under 500px, which leaves four
+  // columns crammed onto a phone, so these are keyed to the wall itself.
+  @media (max-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
   }
-  @include media-breakpoint-down(md) {
+  @media (max-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+// Filling the slot and letting object-fit letterbox scales logos up as well as
+// down; with max-* alone a small asset (the Illinois wordmark is only 150px
+// wide) just rendered at its intrinsic size and looked lost. Scoped through
+// .article__content to outrank the theme's `img:not(.emoji)` width cap.
+.article__content .logo-wall img,
+.logo-wall img {
+  width: 100%;
+  height: 100%;
+  max-width: 10.5rem; // stop very wide wordmarks dominating the row
+  object-fit: contain;
 }
 
 // Row of links under a project entry.
