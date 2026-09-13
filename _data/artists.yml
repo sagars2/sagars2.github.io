@@ -41,6 +41,14 @@
       venue: Grant Park
       city: Chicago, IL
 
+- name: Peach Pit
+  spotify: https://open.spotify.com/artist/6fC2AcsQtd9h4BWELbbire
+  image: /assets/images/artists/peach-pit.jpg
+  shows:
+    - date: 2025-09-20
+      event: KEMBA Live!
+      city: Columbus, OH
+
 - name: Martin Garrix
   spotify: https://open.spotify.com/artist/60d24wfXkVzDSfLS6hyCjZ
   image: /assets/images/artists/martin-garrix.jpg
@@ -86,6 +94,15 @@
       venue: Grant Park
       city: Chicago, IL
 
+- name: Doechii
+  spotify: https://open.spotify.com/artist/4E2rKHVDssGJm2SCDOMMJB
+  image: /assets/images/artists/doechii.jpg
+  shows:
+    - date: 2025-08-02
+      event: Lollapalooza
+      venue: Grant Park
+      city: Chicago, IL
+
 - name: BUNT.
   spotify: https://open.spotify.com/artist/2CpLIMBoE2ZzyY3ZBCRZ7j
   image: /assets/images/artists/bunt.jpg
@@ -106,6 +123,15 @@
     - date: 2025-08-01
       event: TAO Chicago
       venue: Lollapalooza aftershow
+      city: Chicago, IL
+
+- name: Bleachers
+  spotify: https://open.spotify.com/artist/2eam0iDomRHGBypaDQLwWI
+  image: /assets/images/artists/bleachers.jpg
+  shows:
+    - date: 2025-08-01
+      event: Lollapalooza
+      venue: Grant Park
       city: Chicago, IL
 
 - name: Dom Dolla
@@ -154,3 +180,19 @@
     - date: 2023-07-13
       event: Stage AE
       city: Pittsburgh, PA
+
+- name: Dzeko
+  spotify: https://open.spotify.com/artist/5vQfv3s2Z2SRdPZKr82ABw
+  image: /assets/images/artists/dzeko.jpg
+  shows:
+    - date: 2021-08-13
+      event: Marquee
+      city: New York, NY
+
+- name: Tritonal
+  spotify: https://open.spotify.com/artist/521qvhdobR0GzhvU6TFw76
+  image: /assets/images/artists/tritonal.jpg
+  shows:
+    - date: 2019-02-28
+      event: Canopy Club
+      city: Urbana, IL
