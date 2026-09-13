@@ -50,6 +50,8 @@ author:
   douban    : # "user_name" the last part of your profile url, e.g. https://www.douban.com/people/user_name
   linkedin  : "sagar-sachdev" # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
   github    : "sagars2" # "user_name" the last part of your profile url, e.g. https://github.com/user_name
+  strava    : "https://strava.app.link/jMGRrycZh2b" # full profile or share link
+  spotify   : "https://open.spotify.com/user/39cautx3nzzp2r26nji3b0pxl?si=7e4c2c0186eb4cae" # full profile link
   npm       : # "user_name" the last part of your profile url, e.g. https://www.npmjs.com/~user_name
 
 

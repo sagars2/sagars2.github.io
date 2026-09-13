@@ -451,6 +451,16 @@ body {
   }
 }
 
+// Footer social buttons the theme doesn't ship, in each brand's colour.
+.author-links > ul > li > {
+  .strava-button {
+    @include clickable($text-color-1, #fc4c02);
+  }
+  .spotify-button {
+    @include clickable($text-color-1, #1db954);
+  }
+}
+
 // Sticky header
 // -------------
 // The bar stays with you through the continuous feed so the tabs can show

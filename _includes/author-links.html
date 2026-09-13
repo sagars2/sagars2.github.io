@@ -102,6 +102,22 @@
       </li>
     {%- endif -%}
 
+    {%- if _author.strava -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Strava' }}">
+        <a class="button button--circle strava-button" itemprop="sameAs" href="{{ _author.strava }}" target="_blank" rel="noopener">
+          <div class="icon">{%- include svg/icon/social/strava.svg -%}</div>
+        </a>
+      </li>
+    {%- endif -%}
+
+    {%- if _author.spotify -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Spotify' }}">
+        <a class="button button--circle spotify-button" itemprop="sameAs" href="{{ _author.spotify }}" target="_blank" rel="noopener">
+          <div class="icon">{%- include svg/icon/social/spotify.svg -%}</div>
+        </a>
+      </li>
+    {%- endif -%}
+
     {%- if _author.twitter -%}
       <li title="{{ _locale_string_follow | replace: '[NAME]', 'Twitter' }}">
         <a class="button button--circle twitter-button" itemprop="sameAs" href="https://twitter.com/{{ _author.twitter }}" target="_blank">
