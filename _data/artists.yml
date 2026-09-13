@@ -13,6 +13,15 @@
 #         venue: Grant Park          # optional, when the event isn't the venue
 #         city: Chicago, IL
 
+- name: LEVI
+  spotify: https://open.spotify.com/artist/1M4OBXDWyLtubqa3SBLxwC
+  image: /assets/images/artists/levi.jpg
+  shows:
+    - date: 2026-06-14
+      event: Azure Day Party
+      venue: The Bungalow
+      city: Huntington Beach, CA
+
 - name: Don Diablo
   spotify: https://open.spotify.com/artist/1l2ekx5skC4gJH8djERwh1
   image: /assets/images/artists/don-diablo.jpg
