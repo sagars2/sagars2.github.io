@@ -61,6 +61,28 @@
       venue: Grant Park
       city: Chicago, IL
 
+- name: Two Friends
+  spotify: https://open.spotify.com/artist/44Ewva5aHOX00EwaX2D2mh
+  image: /assets/images/artists/two-friends.jpg
+  shows:
+    - date: 2025-08-02
+      event: Lollapalooza
+      venue: Grant Park
+      city: Chicago, IL
+
+- name: BUNT.
+  spotify: https://open.spotify.com/artist/2CpLIMBoE2ZzyY3ZBCRZ7j
+  image: /assets/images/artists/bunt.jpg
+  shows:
+    - date: 2025-08-01
+      event: Lollapalooza
+      venue: Grant Park
+      city: Chicago, IL
+    - date: 2025-05-30
+      event: Breakaway Music Festival
+      venue: Historic Crew Stadium
+      city: Columbus, OH
+
 - name: Alesso
   spotify: https://open.spotify.com/artist/4AVFqumd2ogHFlRbKIjp1t
   image: /assets/images/artists/alesso.jpg
@@ -78,15 +100,6 @@
       event: Lollapalooza
       venue: Grant Park
       city: Chicago, IL
-
-- name: BUNT.
-  spotify: https://open.spotify.com/artist/2CpLIMBoE2ZzyY3ZBCRZ7j
-  image: /assets/images/artists/bunt.jpg
-  shows:
-    - date: 2025-05-30
-      event: Breakaway Music Festival
-      venue: Historic Crew Stadium
-      city: Columbus, OH
 
 - name: John Summit
   spotify: https://open.spotify.com/artist/7kNqXtgeIwFtelmRjWv205
