@@ -50,6 +50,14 @@
       venue: Grant Park
       city: Chicago, IL
 
+- name: ANGRYBABY
+  spotify: https://open.spotify.com/artist/5TAU3fcCF32FqKMrdbXfRr
+  image: /assets/images/artists/angrybaby.jpg
+  shows:
+    - date: 2025-10-10
+      event: The Forum Columbus
+      city: Columbus, OH
+
 - name: Peach Pit
   spotify: https://open.spotify.com/artist/6fC2AcsQtd9h4BWELbbire
   image: /assets/images/artists/peach-pit.jpg
@@ -79,6 +87,15 @@
 - name: Jigitz
   spotify: https://open.spotify.com/artist/7sfn5Z6ItzDkOF9cYzxWPZ
   image: /assets/images/artists/jigitz.jpg
+  shows:
+    - date: 2025-08-03
+      event: Lollapalooza
+      venue: Grant Park
+      city: Chicago, IL
+
+- name: Rebecca Black
+  spotify: https://open.spotify.com/artist/3Vl9fyKMIdLMswk8ai3mm9
+  image: /assets/images/artists/rebecca-black.jpg
   shows:
     - date: 2025-08-03
       event: Lollapalooza
