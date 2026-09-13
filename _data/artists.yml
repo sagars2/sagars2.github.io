@@ -13,6 +13,22 @@
 #         venue: Grant Park          # optional, when the event isn't the venue
 #         city: Chicago, IL
 
+- name: Don Diablo
+  spotify: https://open.spotify.com/artist/1l2ekx5skC4gJH8djERwh1
+  image: /assets/images/artists/don-diablo.jpg
+  shows:
+    - date: 2026-03-14
+      event: Time Nightclub
+      city: Costa Mesa, CA
+
+- name: Jai Wolf
+  spotify: https://open.spotify.com/artist/24V5UY0nChKpnb1TBPJhCw
+  image: /assets/images/artists/jai-wolf.jpg
+  shows:
+    - date: 2026-02-21
+      event: Time Nightclub
+      city: Costa Mesa, CA
+
 - name: Sammy Virji
   spotify: https://open.spotify.com/artist/1GuqTQbuixFHD6eBkFwVcb
   image: /assets/images/artists/sammy-virji.jpg
