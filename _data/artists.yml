@@ -1,28 +1,127 @@
 # Artists I've seen live.
 #
-# Empty for now — the Music page shows a "to be filled in" placeholder until
-# the first entry is added here, so nothing invented ever ships.
+# Artists are shown in the order they appear in this file (most recent show
+# first). Each show is listed newest-first on its card automatically, and an
+# artist seen more than once gets a "x2"/"x3" badge.
 #
-# Each artist takes a name, a Spotify artist-page link, and a list of shows.
-# The page counts the shows automatically, so seeing someone three times just
-# means adding three entries under `shows`, and it shows a "x3" badge. Artists
-# are listed alphabetically and each artist's shows newest-first.
-#
-# Uncomment and edit to start:
-#
-# - name: Fred again..
-#   spotify: https://open.spotify.com/artist/4oLeXFyACqeem2VImYeBFe
-#   shows:
-#     - year: 2025
-#       event: Coachella
-#       city: Indio, CA
-#     - year: 2024
-#       event: The Warehouse Project
-#       city: Los Angeles, CA
-#
-# - name: Lane 8
-#   spotify: https://open.spotify.com/artist/4Ge8xMJNwt6EDNPcsRlyM4
-#   shows:
-#     - year: 2025
-#       event: This Never Happened
-#       city: Los Angeles, CA
+#   - name: Artist Name
+#     spotify: https://open.spotify.com/artist/...
+#     image: /assets/images/artists/artist-name.jpg   # Spotify artist photo
+#     shows:
+#       - date: 2025-08-03          # YYYY-MM-DD; the card shows month and year
+#         event: Lollapalooza        # festival, tour or venue name
+#         venue: Grant Park          # optional, when the event isn't the venue
+#         city: Chicago, IL
+
+- name: Sammy Virji
+  spotify: https://open.spotify.com/artist/1GuqTQbuixFHD6eBkFwVcb
+  image: /assets/images/artists/sammy-virji.jpg
+  shows:
+    - date: 2025-11-13
+      event: KEMBA Live!
+      city: Columbus, OH
+    - date: 2025-08-03
+      event: Lollapalooza
+      venue: Grant Park
+      city: Chicago, IL
+
+- name: Martin Garrix
+  spotify: https://open.spotify.com/artist/60d24wfXkVzDSfLS6hyCjZ
+  image: /assets/images/artists/martin-garrix.jpg
+  shows:
+    - date: 2025-08-03
+      event: Lollapalooza
+      venue: Grant Park
+      city: Chicago, IL
+
+- name: Gryffin
+  spotify: https://open.spotify.com/artist/2ZRQcIgzPCVaT9XKhXZIzh
+  image: /assets/images/artists/gryffin.jpg
+  shows:
+    - date: 2025-08-03
+      event: Lollapalooza
+      venue: Grant Park
+      city: Chicago, IL
+
+- name: Jigitz
+  spotify: https://open.spotify.com/artist/7sfn5Z6ItzDkOF9cYzxWPZ
+  image: /assets/images/artists/jigitz.jpg
+  shows:
+    - date: 2025-08-03
+      event: Lollapalooza
+      venue: Grant Park
+      city: Chicago, IL
+
+- name: RÜFÜS DU SOL
+  spotify: https://open.spotify.com/artist/5Pb27ujIyYb33zBqVysBkj
+  image: /assets/images/artists/rufus-du-sol.jpg
+  shows:
+    - date: 2025-08-02
+      event: Lollapalooza
+      venue: Grant Park
+      city: Chicago, IL
+
+- name: Alesso
+  spotify: https://open.spotify.com/artist/4AVFqumd2ogHFlRbKIjp1t
+  image: /assets/images/artists/alesso.jpg
+  shows:
+    - date: 2025-08-01
+      event: TAO Chicago
+      venue: Lollapalooza aftershow
+      city: Chicago, IL
+
+- name: Dom Dolla
+  spotify: https://open.spotify.com/artist/205i7E8fNVfojowcQSfK9m
+  image: /assets/images/artists/dom-dolla.jpg
+  shows:
+    - date: 2025-07-31
+      event: Lollapalooza
+      venue: Grant Park
+      city: Chicago, IL
+
+- name: BUNT.
+  spotify: https://open.spotify.com/artist/2CpLIMBoE2ZzyY3ZBCRZ7j
+  image: /assets/images/artists/bunt.jpg
+  shows:
+    - date: 2025-05-30
+      event: Breakaway Music Festival
+      venue: Historic Crew Stadium
+      city: Columbus, OH
+
+- name: John Summit
+  spotify: https://open.spotify.com/artist/7kNqXtgeIwFtelmRjWv205
+  image: /assets/images/artists/john-summit.jpg
+  shows:
+    - date: 2024-06-01
+      event: Breakaway Music Festival
+      venue: Historic Crew Stadium
+      city: Columbus, OH
+    - date: 2023-12-28
+      event: Brooklyn Navy Yard
+      city: Brooklyn, NY
+
+- name: deadmau5
+  spotify: https://open.spotify.com/artist/2CIMQHirSU0MQqyYHq0eOx
+  image: /assets/images/artists/deadmau5.jpg
+  shows:
+    - date: 2023-10-27
+      event: Haunted Fest
+      venue: KEMBA Live!
+      city: Columbus, OH
+
+- name: Loud Luxury
+  spotify: https://open.spotify.com/artist/6t1gpxYbY8OlLA7D2RiikQ
+  image: /assets/images/artists/loud-luxury.jpg
+  shows:
+    - date: 2023-10-27
+      event: Haunted Fest
+      venue: KEMBA Live!
+      city: Columbus, OH
+
+- name: ILLENIUM
+  spotify: https://open.spotify.com/artist/45eNHdiiabvmbp4erw26rg
+  image: /assets/images/artists/illenium.jpg
+  shows:
+    - date: 2023-07-13
+      event: Stage AE
+      city: Pittsburgh, PA
